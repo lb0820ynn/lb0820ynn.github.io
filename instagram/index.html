@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>刘彬的个人博客</title>
+  <title>相册 | 刘彬的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="图片来自instagram，正在加载中…">
 <meta property="og:type" content="website">
-<meta property="og:title" content="刘彬的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:title" content="相册">
+<meta property="og:url" content="http://yoursite.com/instagram/index.html">
 <meta property="og:site_name" content="刘彬的个人博客">
-<meta property="og:description">
+<meta property="og:description" content="图片来自instagram，正在加载中…">
+<meta property="og:updated_time" content="2015-07-21T06:42:19.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="刘彬的个人博客">
-<meta name="twitter:description">
+<meta name="twitter:title" content="相册">
+<meta name="twitter:description" content="图片来自instagram，正在加载中…">
   
     <link rel="alternative" href="/atom.xml" title="刘彬的个人博客" type="application/atom+xml">
   
@@ -194,15 +195,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-2015.7.21-create-my-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/07/21/2015.7.21-create-my-blog/" class="article-date">
-  	<time datetime="2015-07-21T08:02:25.701Z" itemprop="datePublished">2015-07-21</time>
-</a>
-    </div>
+      <div class="body-wrap"><article id="post-instagram" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
@@ -212,82 +205,75 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/21/2015.7.21-create-my-blog/">使用GitHub-Pages和Hexo搭建自己的个人博客</a>
+    <h1 class="article-title" itemprop="name">
+      相册
     </h1>
   
 
       </header>
       
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用GitHub-Pages和Hexo搭建自己的个人博客">使用GitHub-Pages和Hexo搭建自己的个人博客</h2><hr>
-<ul>
-<li>公司使用GitHub托管代码，无意间发现有Pages这样一个东东，搭建博客再好不过。GitHub提供了Pages功能，允许用户自定义项目主页，用于替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。相关介绍可以看其官网<a href="https://pages.github.com/" target="_blank" rel="external">GithubPages官网主页</a>上面有简单的介绍和教程，可以研读一下。</li>
-<li>Hexo是什么，A fast, simple &amp; powerful blog framework，一个简单便捷并且很强大的博客框架。支持MarkDown语法并提供很多个性化的主题，使用起来也比较简单，与Pages搭配搭建自己的个人主页是一个不错的选择。</li>
-</ul>
-<p>下面简介一下自己的简单搭建过程：<br><strong>工具原料（需要自己安装的和注册的账号等）</strong></p>
-<ul>
-<li>Git <a href="http://msysgit.github.io/" target="_blank" rel="external">官网地址</a></li>
-<li>Node.js<a href="https://nodejs.org/" target="_blank" rel="external">Node.js官网地址</a></li>
-<li>GitHub账号</li>
-</ul>
-<p>安装过程</p>
-<ul>
-<li>Hexo安装及初始化过程</li>
-</ul>
-<blockquote>
-<p>打开git-bash<br>npm install hexo-cli -g<br>hexo init blog<br>cd blog<br>npm install<br>hexo server<br>hexo server是将hexo服务跑起来，如果成功的话则可以访问<a href="http://localhost:4000/成功" target="_blank" rel="external">http://localhost:4000/成功</a><br>期间遇到过一次插件的问题显示的页面没有样式，重新安装下插件就好了<br>如果遇到插件相关的error请先执行下面的指令安装必须的plugins</p>
-</blockquote>
-<pre><code>npm <span class="operator"><span class="keyword">install</span> hexo-renderer-ejs <span class="comment">--save</span>
-npm <span class="keyword">install</span> hexo-renderer-marked <span class="comment">--save</span>
-npm <span class="keyword">install</span> hexo-renderer-stylus <span class="comment">--save</span></span>
-</code></pre><ul>
-<li>修改Hexo主题</li>
-</ul>
-<blockquote>
-<p>打开blog目录下的_config.yml文件，该文件为配置文件，详细请看官网介绍<br>在blog目录下打开git-bash<br>在官网找到喜欢的主题并得到其github路径，执行类似命令<br><code>git clone https://github.com/wuchong/jacman.git themes/jacman</code><br>查看themes目录，会多一个jacman的目录<br>找到theme:字段， 修改后面的值为新的主题jacman<br>执行命令<code>hexo generate</code><br>执行命令<code>hexo server</code></p>
-</blockquote>
-<ul>
-<li><p>分布到GitHub—配置SSHkey<br>分布到github的时候由于http的路径不能用，只能用ssh链接，所以需要配置sshkey，详细教程参照<br><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys/</a></p>
-</li>
-<li><p>分布到github-修改配置文件<br>在github新创建的Repository中找到ssh链接如图<br><img src="https://lh3.googleusercontent.com/33VssE6y0p4UNZkI3z9kvx60mH-efWRnq-Vrp500rg=s0" alt="enter image description here" title="QQ截图20150721155733.png"><br><code>deploy:
-type: git
-repository: git@github.com:lb0820ynn/lb0820ynn.github.io.git
-branch: master</code></p>
-</li>
-</ul>
-<ul>
-<li>分布到github-执行指令<br><code>hexo clean
-hexo generate
-hexo deploy</code></li>
-</ul>
-
+        <p><div class="instagram" data-client-id="956dd096b6e5496aba6662165b9b8443" data-user-id="438522285"><br>    <a href="http://instagram.com/litten225" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a><br></div></p>
+<script src="/js/jquery.lazyload.js"></script>
+<script src="/js/instagram.js"></script>
       
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
+    
+  
 </article>
 
 
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="instagram" data-title="相册" data-url="http://yoursite.com/instagram/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -311,7 +297,7 @@ hexo deploy</code></li>
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
