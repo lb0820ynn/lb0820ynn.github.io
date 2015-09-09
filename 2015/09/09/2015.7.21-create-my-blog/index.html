@@ -10,13 +10,13 @@
 公司使用GitHub托管代码，无意间发现有Pages这样一个东东，搭建博客再好不过。GitHub提供了Pages功能，允许用户自定义项目主页，用于替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。相关介绍可以看其官网GithubPages官网主页上面有简单的介绍和教程，可以研读一下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用GitHub-Pages和Hexo搭建自己的个人博客">
-<meta property="og:url" content="http://yoursite.com/2015/07/21/2015.7.21-create-my-blog/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/09/09/2015.7.21-create-my-blog/index.html">
 <meta property="og:site_name" content="刘彬的个人博客">
 <meta property="og:description" content="使用GitHub-Pages和Hexo搭建自己的个人博客
 
 公司使用GitHub托管代码，无意间发现有Pages这样一个东东，搭建博客再好不过。GitHub提供了Pages功能，允许用户自定义项目主页，用于替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。相关介绍可以看其官网GithubPages官网主页上面有简单的介绍和教程，可以研读一下。">
 <meta property="og:image" content="https://lh3.googleusercontent.com/33VssE6y0p4UNZkI3z9kvx60mH-efWRnq-Vrp500rg=s0">
-<meta property="og:updated_time" content="2015-07-21T08:02:03.867Z">
+<meta property="og:updated_time" content="2015-09-09T10:31:57.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用GitHub-Pages和Hexo搭建自己的个人博客">
 <meta name="twitter:description" content="使用GitHub-Pages和Hexo搭建自己的个人博客
@@ -205,8 +205,8 @@
       <div class="body-wrap"><article id="post-2015.7.21-create-my-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/21/2015.7.21-create-my-blog/" class="article-date">
-  	<time datetime="2015-07-21T08:02:25.701Z" itemprop="datePublished">2015-07-21</time>
+      <a href="/2015/09/09/2015.7.21-create-my-blog/" class="article-date">
+  	<time datetime="2015-09-09T10:31:57.420Z" itemprop="datePublished">2015-09-09</time>
 </a>
     </div>
   
@@ -265,24 +265,36 @@ npm <span class="keyword">install</span> hexo-renderer-stylus <span class="comme
 <ul>
 <li><p>分布到GitHub—配置SSHkey<br>分布到github的时候由于http的路径不能用，只能用ssh链接，所以需要配置sshkey，详细教程参照<br><a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank" rel="external">https://help.github.com/articles/generating-ssh-keys/</a></p>
 </li>
-<li><p>分布到github-修改配置文件<br>在github新创建的Repository中找到ssh链接如图<br><img src="https://lh3.googleusercontent.com/33VssE6y0p4UNZkI3z9kvx60mH-efWRnq-Vrp500rg=s0" alt="enter image description here" title="QQ截图20150721155733.png"><br><code>deploy:
-type: git
-repository: git@github.com:lb0820ynn/lb0820ynn.github.io.git
-branch: master</code></p>
+<li><p>分布到github-修改配置文件<br>在github新创建的Repository中找到ssh链接如图<br><img src="https://lh3.googleusercontent.com/33VssE6y0p4UNZkI3z9kvx60mH-efWRnq-Vrp500rg=s0" alt="enter image description here" title="QQ截图20150721155733.png"></p>
 </li>
 </ul>
-<ul>
-<li>分布到github-执行指令<br><code>hexo clean
-hexo generate
-hexo deploy</code></li>
+<pre><code><span class="attribute">deploy</span>:
+  <span class="attribute">type</span>: git
+  <span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:lb0820ynn/lb0820ynn.github.io.git
+  <span class="attribute">branch</span>: master
+</code></pre><ul>
+<li>分布到github-执行指令</li>
 </ul>
-
+<pre><code><span class="title">hexo</span> clean
+hexo generate
+hexo deploy
+</code></pre>
       
     </div>
     
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2015/09/09/多渠道打包-2015.9.9/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -306,7 +318,7 @@ hexo deploy</code></li>
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015.7.21-create-my-blog" data-title="使用GitHub-Pages和Hexo搭建自己的个人博客" data-url="http://yoursite.com/2015/07/21/2015.7.21-create-my-blog/"></div>
+	<div class="ds-thread" data-thread-key="2015.7.21-create-my-blog" data-title="使用GitHub-Pages和Hexo搭建自己的个人博客" data-url="http://yoursite.com/2015/09/09/2015.7.21-create-my-blog/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
