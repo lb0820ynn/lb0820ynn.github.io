@@ -196,6 +196,76 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Android自定义View-绘制扇形实现圆形进度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/04/Android自定义View-绘制扇形实现圆形进度/" class="article-date">
+  	<time datetime="2016-03-04T02:35:38.695Z" itemprop="datePublished">2016-03-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://photos.google.com/photo/AF1QipMjxiQ0-2XQXyI9xM75CCh4u04d7D8e_3RTYi0_" alt=""><br><img src="https://photos.google.com/photo/AF1QipMw5IjZGE1XCJmJqsfR_YALT0EQePWpBxeDXriJ" alt=""></p>
+<p>先上图，这是要实现的效果,根据音量的大小中间的进度调节。麦克风部分是透明的,所以原理就是在蒙层的底部画白色的扇形。如下图所示</p>
+<p><img src="https://photos.google.com/photo/AF1QipM6cJZpWo9m536FnJebToZQOw-tX5CTv9liHHKW" alt=""></p>
+<p>这样就能实现圆形像水瓮一样的进度。<br>实现方法：<br>通过Canvas的drawArc方法实现。<br>public void drawArc(@NonNull RectF oval, float startAngle, float sweepAngle, boolean useCenter ,<br>        @NonNull Paint paint)<br>oval  指定圆弧的外轮廓矩形区域<br>startAngle 开始的角度<br>sweepAngle 扫过的角度<br>useCenter 是否使用圆心，true为使用，画扇形的时候使用，false不使用,画上图类型的图形时应不使用圆心<br>paint 画笔<br>关于起始角度：水平的右侧为0度,顺时针增加，0度上方的度数可以写作-30度，也可以是330度<br>关于扫过角度：如果要画左侧与右侧水平的扇形，若起始角度为x，扫过角度为y，则y=（90-x）*2；<br><img src="https://photos.google.com/photo/AF1QipPdvH2OdISumU4IoGEz_FHnQLGwsdt-_9wDS_9v" alt=""></p>
+<p><img src="https://photos.google.com/photo/AF1QipO1qZ4XArL1TeswTs0DOupDFG3jLQU4B-QR7yvr" alt=""></p>
+<p>核心代码<br>@Override<br>protected void onDraw(Canvas canvas) {<br>    super .onDraw(canvas);<br>    // 创建画笔<br>    Paint paint = new Paint();<br>    paint.setColor(Color. BLUE);<br>    paint.setStrokeJoin(Paint.Join. ROUND);<br>    paint.setStrokeCap(Paint.Cap. ROUND);<br>    paint.setStyle(Paint.Style. FILL);</p>
+<pre><code>RectF <span class="built_in">rect</span> = <span class="keyword">new</span> RectF(<span class="number">0</span> , <span class="number">0</span>, getMeasuredWidth(), getMeasuredHeight()) ;
+<span class="built_in">int</span> a = - <span class="number">45</span>;
+canvas.drawArc(<span class="built_in">rect</span> , <span class="comment">//弧线所使用的矩形区域大小</span>
+        a ,  <span class="comment">//开始角度</span>
+        ( <span class="number">90</span> - a) * <span class="number">2</span> , <span class="comment">//扫过的角度</span>
+        <span class="keyword">false</span>, <span class="comment">//是否使用中心</span>
+        paint) ;
+</code></pre><p>}</p>
+<p>根据传值设置进度<br>设进度总和为100，当前进度为current，该图形起始的角度为90度，最大的角度为-90度，所以角度总和为180度，设当前current对应的起始角度为y,current为x<br>则起始角度y=90-(x/100)*180<br>代码如下<br>@Override<br>protected void onDraw(Canvas canvas) {<br>    super .onDraw(canvas);<br>    // 创建画笔<br>    if (mPaint == null )<br>        mPaint = new Paint();<br>    mPaint .setColor(Color.WHITE);</p>
+<pre><code><span class="keyword">if</span> ( mProgress &gt; MAX_VOLUME) {
+    mProgress = MAX_VOLUME;
+}
+<span class="comment">// 得到当前音量占最大音量的百分比</span>
+<span class="keyword">double</span> percent = ((<span class="keyword">double</span>) mProgress) / MAX_VOLUME;
+<span class="comment">// 得到当前音量画扇形时从起始角度应该转过的角度</span>
+<span class="keyword">double</span> degree = volume_sum_degree * percent ;
+<span class="comment">// 画扇形时的起始角度</span>
+<span class="keyword">double</span> drawStartDegree = volume_down_degree - degree ;
+RectF <span class="built_in">rect</span> = <span class="keyword">new</span> RectF(<span class="number">0</span> , <span class="number">0</span>, getMeasuredWidth(), getMeasuredHeight()) ;
+canvas.drawArc(<span class="built_in">rect</span> , <span class="comment">//弧线所使用的矩形区域大小</span>
+        ( <span class="built_in">float</span>) drawStartDegree,  <span class="comment">//开始角度</span>
+        ( <span class="built_in">float</span>) ((<span class="number">90</span> - drawStartDegree) * <span class="number">2</span>) , <span class="comment">//扫过的角度</span>
+        <span class="keyword">false</span>, <span class="comment">//是否使用中心</span>
+        mPaint );
+</code></pre><p>}</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-2015.7.21-create-my-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -456,7 +526,7 @@ gradlew assembleRelease 编译并打<span class="keyword">Release</span>的包
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 LiuBin
+    		&copy; 2016 LiuBin
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
